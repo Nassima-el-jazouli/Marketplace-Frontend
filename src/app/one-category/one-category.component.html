@@ -1,0 +1,96 @@
+<button data-toggle="modal" data-target="#exampleModal1"><i class="fas fa-plus"> Add </i></button>
+<br><br><br><br>
+<div class="box-activity">
+    <div class="sc-card-activity style-2" *ngFor="let category of categories | async">
+        <div class="content">
+            
+        <div class="infor">
+            <h4>Category name</h4>
+            <li><span class="author">{{category.name}}</span></li>
+        </div>
+        </div>
+        <button data-toggle="modal" data-target="#exampleModal2"><i class="active far fa-edit"> Edit</i></button>
+        <button (click)="deleteCategory(category.id)"><i class="fas fa-trash"></i> Remove</button>
+    </div>
+</div>
+
+<!-- Add Modal  -->
+<div
+  class="modal fade"
+  id="exampleModal1"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="flat-form box-login-email">
+        <br><br>
+        <div class="form-inner">
+            <form action="#" id="contactform" name="form"
+            #f="ngForm" novalidate>
+                <input id="name1" name="name1" tabindex="1" value="" aria-required="true" required type="text" placeholder="Your Userame">
+                <br>
+                
+                <button type="submit" class="submit">Save</button>
+            </form>
+        </div>
+        
+    </div>
+
+      <div class="modal-footer">
+        <button id="closeButton" data-dismiss="modal">
+          Close
+        </button>
+        <button class="submit">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit Modal  -->
+<div
+  class="modal fade"
+  id="exampleModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="flat-form box-login-email">
+        <br><br>
+        <div class="form-inner">
+            <form action="#" id="contactform" name="form" #f="ngForm" novalidate>
+                <input id="editcategory" name="editcategory" tabindex="1" value="" aria-required="true" required type="text" placeholder="Your Userame">
+                <br>
+                
+                
+            </form>
+        </div>
+        
+    </div>
+
+      <div class="modal-footer">
+        <button id="closeButton" data-dismiss="modal">
+          Close
+        </button>
+        <button class="submit">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

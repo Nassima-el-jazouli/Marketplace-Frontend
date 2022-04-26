@@ -1,0 +1,10 @@
+<div class="">
+    <div class="seclect-box style-1">
+        <div id="item_category" class="dropdown">
+            <a href="#" class="btn-selector nolink">All categories</a>
+            <ul>
+                <li *ngFor="let category of categories | async"><span>{{category.name}}</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
